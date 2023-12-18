@@ -1,3 +1,7 @@
+html,body,.container{
+  width: 100%;
+  height:100%;
+}
 * {
   margin: 0;
   padding: 0;
@@ -88,4 +92,70 @@
 .footer p {
   font-size: 13px;
   font-weight: normal;
+}
+
+/* solution */
+.container{
+  display:grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 100px 1fr 7fr 50px;
+  gap:4px;
+}
+
+/* header setting */
+.header{
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display:grid;
+  grid-template-columns: 1fr 5fr;
+}
+.header>div{
+  place-items: center;
+}
+.menu>ul{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.menu>ul>li{
+  list-style: none;
+}
+
+/* sidebar setting */
+.sidebar{
+  grid-column: 1/2;
+  grid-row:2/4;
+  display:grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap:50px;
+}
+.sidebar>div{
+  display:grid;
+  place-items: center;
+}
+
+/* nav setting */
+.nav{
+  grid-row:2/3;
+  grid-column: 2/3;
+}
+.nav>ul{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.nav>ul>li{
+  list-style: none;
+}
+
+.article{
+  grid-row:3/4;
+  grid-column:2/3;
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap:15px;
+}
+.article .card{
+  height:200px;
+}
+.footer{
+  grid-column:1/-1;
 }
