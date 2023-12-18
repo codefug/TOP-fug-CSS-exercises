@@ -98,57 +98,56 @@ html,body,.container{
 .container{
   display:grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 100px 1fr 7fr 50px;
   gap:4px;
 }
 
 /* header setting */
 .header{
   grid-column: 1/-1;
-  grid-row: 1/2;
   display:grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 2fr;
 }
-.header>div{
-  place-items: center;
+.logo{
+  justify-self: start;
+  align-self: center;
+}
+.menu{
+  align-self: center;  
 }
 .menu>ul{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.menu>ul>li{
-  list-style: none;
+
+.menu ul{
+  list-style-type: none;
+  gap:15px;
 }
 
 /* sidebar setting */
 .sidebar{
-  grid-column: 1/2;
-  grid-row:2/4;
+  grid-row:2 / 4;
   display:grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap:50px;
 }
+
 .sidebar>div{
   display:grid;
   place-items: center;
 }
 
-/* nav setting */
+/* nav setting */ 
 .nav{
-  grid-row:2/3;
-  grid-column: 2/3;
+  display: grid;
+  align-items: center;
 }
 .nav>ul{
+  list-style-type: none;
   display:grid;
   grid-template-columns: repeat(3,1fr);
 }
-.nav>ul>li{
-  list-style: none;
-}
 
 .article{
-  grid-row:3/4;
-  grid-column:2/3;
   display:grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   gap:15px;
@@ -156,6 +155,11 @@ html,body,.container{
 .article .card{
   height:200px;
 }
+.card p{
+  padding:5px;
+}
 .footer{
   grid-column:1/-1;
+  display:grid;
+  align-items: center;
 }
